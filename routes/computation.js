@@ -3,15 +3,14 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Navyasree Sriperumbudoor' });
 if(req.query.x==undefined){
-  var RandomValue= Math.random();
+  var RandomValue= Math.random().toFixed(2);
 }
 else{
   RandomValue= req.query.x; }
 
-  var tanhVal=Math.tanh(RandomValue);
-  res.render(`computation`,{tanh: `tanh(${tanh}) value is= ${tanhVal}`});
+  var tanhVal=Math.tanh(RandomValue).toFixed(2);
+  res.render(`computation`,{tanhVal: `tanh(${RandomValue}) value is= ${tanhVal}`});
 });
 
 module.exports = router;
