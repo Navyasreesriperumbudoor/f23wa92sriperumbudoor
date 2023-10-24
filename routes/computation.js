@@ -8,9 +8,10 @@ if(req.query.x==undefined){
   var RandomValue= Math.random();
 }
 else{
+  RandomValue= req.query.x; }
+
   var tanhVal=Math.tanh(RandomValue);
-  res.render(`computation`,{tanh: `tanh(${tanh}) value is= ${tanhVal}`})
-}
+  res.render(`computation`,{tanh: `tanh(${tanh}) value is= ${tanhVal}`});
 });
 
 module.exports = router;
