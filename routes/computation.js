@@ -10,7 +10,11 @@ else{
   RandomValue= req.query.x; }
 
   var tanhVal=Math.tanh(RandomValue).toFixed(2);
-  res.render(`computation`,{tanhVal: `tanh(${RandomValue}) value is= ${tanhVal}`});
+  res.render(`computation`,{ 
+    tanhVal: `tanh(${RandomValue}) value is= ${tanhVal}`
+}
+ );
+
 });
 
 module.exports = router;
